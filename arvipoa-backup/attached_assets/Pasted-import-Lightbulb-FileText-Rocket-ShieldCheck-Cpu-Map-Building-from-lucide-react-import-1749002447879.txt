@@ -1,0 +1,86 @@
+import { Lightbulb, FileText, Rocket, ShieldCheck, Cpu, Map, Building } from "lucide-react";
+import { motion } from "framer-motion";
+
+const milestones = [
+  {
+    year: "2019",
+    title: "Idea & Inception",
+    icon: <Lightbulb />,
+    description: "The concept of ARVIPOA was born out of a need for smart, secure, and transparent property registration across Africa.",
+    image: "https://images.unsplash.com/photo-1522199710521-72d69614c702"
+  },
+  {
+    year: "2020",
+    title: "Research & Prototyping",
+    icon: <FileText />,
+    description: "Research, stakeholder engagement, and early designs were finalized — leading to a working prototype.",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786"
+  },
+  {
+    year: "2021",
+    title: "Public Pilot",
+    icon: <Rocket />,
+    description: "We launched the first pilot in selected communities and gathered massive feedback from real users.",
+    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+  },
+  {
+    year: "2022",
+    title: "Smart Pillars & Security Systems",
+    icon: <ShieldCheck />,
+    description: "Deployment of IoT-connected Smart Pillars and Barricades began for real-time land monitoring and alerts.",
+    image: "https://images.unsplash.com/photo-1581090700227-1e8e27b87a5b"
+  },
+  {
+    year: "2023",
+    title: "AI & Blockchain Integration",
+    icon: <Cpu />,
+    description: "AI-based property verification and Blockchain-backed ownership trails were introduced.",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231"
+  },
+  {
+    year: "2024",
+    title: "Expansion Across Regions",
+    icon: <Map />,
+    description: "ARVIPOA scaled across regions with multilingual support, smart cards, and mobile dashboards.",
+    image: "https://images.unsplash.com/photo-1573164574396-9b3c3e8d213d"
+  },
+  {
+    year: "2025",
+    title: "ARVIPOA Global Launch",
+    icon: <Building />,
+    description: "Now, ARVIPOA is a smart hub offering AI-guided land services, emergency infrastructure, and digital communities.",
+    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312"
+  }
+];
+
+export default function AboutTimeline() {
+  return (
+    <section className="bg-white py-20 px-6 text-gray-800">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-indigo-700">Our Journey</h2>
+        <div className="space-y-12">
+          {milestones.map((step, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6"
+            >
+              <img src={step.image} alt={step.title} className="w-full md:w-1/3 h-56 object-cover rounded" />
+              <div className="md:flex-1">
+                <div className="flex items-center gap-3 mb-2 text-indigo-600">
+                  <div className="text-2xl">{step.icon}</div>
+                  <span className="text-lg font-semibold">{step.year}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

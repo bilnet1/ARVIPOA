@@ -1,0 +1,80 @@
+“Use this mockup blueprint to create an interactive, responsive land registration form for ARVIPOA. Ensure each section is collapsible/expandable with tooltips and icons. Integrate OCR-ready site plan upload (front/back), QR scanning, and digital address generator via GhanaPostGPS API. Add map interactivity (map/satellite/terrain toggle) and clickable image-based pillar addition using the Smart Pillar image. Enable invite flow for third-party reps via OTP verification, contract uploads, title application options, and payment plan. Use sleek dark UI with ARVIPOA styling.”
+
+🧩 UI/UX Design Blueprint Overview:
+1. Page Title: LAND REGISTRATION FORM (ARVIPOA)
+Sticky header with dark-themed ARVIPOA brand color and icons.
+
+"Save Draft", "Preview", and "Submit" buttons always visible on top-right.
+
+2. Section A: Property Location
+Field	Design Notes
+Address / House No / Locality / Town	Inline grouped inputs with Ghana flag icon
+Region / District	Select dropdowns
+Digital Address	GhanaPostGPS button “📍Generate Digital Address”
+Longitude / Latitude	Auto-filled after GPS selection
+P.O. Box / PMB No.	Optional field with tooltip
+Site Plan Number	Inline input field
+Land Size	Dropdown presets (e.g. 100ft x 100ft) or custom
+
+3. Section B: Site Plan Upload + OCR
+Two panels: Front Image Upload + Back Image Upload
+
+OCR Preview Panel to show fields auto-filled from site plan.
+
+Map View (Tabs): 🗺️ Map / Satellite / Terrain powered by Google Earth.
+
+Surveyor Panel Access: Only visible if user is a surveyor.
+
+4. Section C: Add Pillars
+💡 Smart Pillar Integration UI
+
+“Add Pillar” Button – click to open modal.
+
+Modal shows:
+
+Pillar Number
+
+Pillar GPS Generator Link
+
+Smart Pillar Image Preview (auto fills when a Smart Pillar is selected)
+
+Attach Photos (snap or upload)
+
+Users can add multiple pillars — collapsible accordion.
+
+5. Section D: Contract / Agreement
+Field	Design Notes
+Add Representing Parties	"Add Party" modal with role selector
+Roles: Seller, Buyer, Agent, Witness, etc.	Checkboxes
+Identity & Capacity	Toggle between Individual, Org, Clan, etc.
+OTP Verification for Invitee	Input with “Send OTP” and “Verify”
+Indenture Details	Contract Start/End + file upload
+
+6. Section E: Title, Concurrence & Yellow Card
+Tabs: Basic | Standard | Fast Track | Gold | Prestige
+
+Each plan shows price, delivery estimate
+
+Option to pay + receive status updates
+
+Apply via “🧾 Apply & Pay” button (linked to payment API)
+
+7. Section F: Final Usage Declaration
+Field	Design Notes
+“What do you want to do with this land?”	Multi-select grid with icon toggles
+Options: Add Building, Agriculture, Sports, Sell, Rent, Gift, Will, Lease, Mortgage, Transfer, Auction, etc.	
+Conditional forms appear based on selected option	
+
+📎 Extra Features:
+OCR-powered Camera Scanner for site plan & QR code
+
+Map click-to-mark feature for selecting land coordinates visually
+
+Sticky Sidebar Navigator to jump to sections
+
+Progress Tracker showing % completion
+
+Admin View: Review & Approval dashboard for Surveyors and Solicitors
+
+📸 Visual Add-on:
+Insert the Smart Pillar image (already provided) in the “Add Pillar” modal with animation or carousel of images. Let users preview how their security will look with this device.

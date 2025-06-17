@@ -1,0 +1,76 @@
+import { useEffect, useState } from 'react';
+import { AlertTriangle, BatteryCharging, Eye, Flame, Waves, WifiOff, Music, PawPrint, Car, CloudDrizzle, Wind } from 'lucide-react';
+
+export default function SmartPillarDashboard() {
+  const [status, setStatus] = useState({
+    vibration: false,
+    gunshot: false,
+    fire: false,
+    music: false,
+    animal: false,
+    vehicle: false,
+    gasLeak: false,
+    smoke: false,
+    battery: 82,
+    connection: true,
+    riverLevel: 6.2,
+    cameraMotion: false,
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus(prev => ({
+        ...prev,
+        riverLevel: +(Math.random() * 10).toFixed(1),
+        vibration: Math.random() > 0.9,
+        gunshot: Math.random() > 0.95,
+        fire: Math.random() > 0.92,
+        music: Math.random() > 0.85,
+        animal: Math.random() > 0.8,
+        vehicle: Math.random() > 0.88,
+        gasLeak: Math.random() > 0.9,
+        smoke: Math.random() > 0.9,
+        battery: Math.max(0, Math.min(100, prev.battery - 0.1)),
+        connection: Math.random() > 0.03,
+        cameraMotion: Math.random() > 0.9
+      }));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="min-h-screen bg-gray-950 text-white px-6 py-16">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-green-400 mb-8">Smart Pillar Monitoring Dashboard</h1>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card icon={<Waves />} title="River Level" value={`${status.riverLevel}m`} color="blue" />
+          <Card icon={<BatteryCharging />} title="Battery Status" value={`${status.battery.toFixed(0)}%`} color="yellow" />
+          <Card icon={<WifiOff />} title="Connection" value={status.connection ? 'Online' : 'Offline'} color={status.connection ? 'green' : 'red'} />
+          <Card icon={<AlertTriangle />} title="Vibration Detected" value={status.vibration ? 'YES' : 'NO'} color={status.vibration ? 'red' : 'gray'} />
+          <Card icon={<Flame />} title="Fire Alert" value={status.fire ? 'YES' : 'NO'} color={status.fire ? 'red' : 'gray'} />
+          <Card icon={<Eye />} title="Motion (CCTV)" value={status.cameraMotion ? 'Detected' : 'Clear'} color={status.cameraMotion ? 'orange' : 'gray'} />
+          <Card icon={<AlertTriangle />} title="Gunshot Alert" value={status.gunshot ? 'YES' : 'NO'} color={status.gunshot ? 'red' : 'gray'} />
+          <Card icon={<Music />} title="Music Detection" value={status.music ? 'YES' : 'NO'} color={status.music ? 'purple' : 'gray'} />
+          <Card icon={<PawPrint />} title="Animal Detected" value={status.animal ? 'YES' : 'NO'} color={status.animal ? 'yellow' : 'gray'} />
+          <Card icon={<Car />} title="Vehicle Detected" value={status.vehicle ? 'YES' : 'NO'} color={status.vehicle ? 'green' : 'gray'} />
+          <Card icon={<CloudDrizzle />} title="Gas Leak" value={status.gasLeak ? 'YES' : 'NO'} color={status.gasLeak ? 'red' : 'gray'} />
+          <Card icon={<Wind />} title="Smoke Alert" value={status.smoke ? 'YES' : 'NO'} color={status.smoke ? 'red' : 'gray'} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Card({ icon, title, value, color }) {
+  return (
+    <div className={`p-6 rounded-lg bg-gray-800 border-l-4 border-${color}-500`}>
+      <div className="flex items-center space-x-4">
+        <div className={`text-3xl text-${color}-400`}>{icon}</div>
+        <div>
+          <h2 className="text-xl font-bold">{title}</h2>
+          <p className={`text-${color}-300 text-lg`}>{value}</p>
+        </div>
+      </div>
+    </div>
+  );
+}

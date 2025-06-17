@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARVIMEDIA Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a1a; color: white; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #333; border-radius: 8px; }
+        .button { background: #e50914; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; margin: 5px; }
+        .button:hover { background: #f40612; }
+        .streaming-icon { display: inline-block; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #e50914, #000); margin: 5px; text-align: center; line-height: 50px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>ARVIMEDIA Platform Test</h1>
+    
+    <div class="test-section">
+        <h2>Navigation Test</h2>
+        <button class="button" onclick="testNavigation()">Test ARVIMEDIA Navigation</button>
+        <button class="button" onclick="testProfile()">Test Profile Access</button>
+        <div id="nav-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Streaming Platform Icons</h2>
+        <div id="streaming-platforms">
+            <div class="streaming-icon">N</div>
+            <div class="streaming-icon">P</div>
+            <div class="streaming-icon">D</div>
+            <div class="streaming-icon">S</div>
+            <div class="streaming-icon">H</div>
+            <div class="streaming-icon">A</div>
+            <div class="streaming-icon">📺</div>
+            <div class="streaming-icon">🎬</div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Video Player Test</h2>
+        <video width="400" height="225" controls>
+            <source src="/assets/Gen-3 Alpha Turbo 3093952672, Gen4  Scene 1 Openin, M 5.mp4" type="video/mp4">
+            <source src="/assets/Gen-4 Turbo  4006709044.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function testNavigation() {
+            const results = document.getElementById('nav-results');
+            results.innerHTML = '<p>Testing navigation to /arvimedia...</p>';
+            
+            // Test if page exists
+            fetch('/arvimedia')
+                .then(response => {
+                    if (response.ok) {
+                        results.innerHTML += '<p style="color: green;">✓ ARVIMEDIA route accessible</p>';
+                        window.location.href = '/arvimedia';
+                    } else {
+                        results.innerHTML += '<p style="color: red;">✗ ARVIMEDIA route not found</p>';
+                    }
+                })
+                .catch(error => {
+                    results.innerHTML += '<p style="color: red;">✗ Navigation error: ' + error.message + '</p>';
+                });
+        }
+
+        function testProfile() {
+            const results = document.getElementById('nav-results');
+            results.innerHTML += '<p>Testing profile access...</p>';
+            
+            fetch('/enhanced-profile')
+                .then(response => {
+                    if (response.ok) {
+                        results.innerHTML += '<p style="color: green;">✓ Profile route accessible</p>';
+                        window.location.href = '/enhanced-profile';
+                    } else {
+                        results.innerHTML += '<p style="color: red;">✗ Profile route not found</p>';
+                    }
+                })
+                .catch(error => {
+                    results.innerHTML += '<p style="color: red;">✗ Profile error: ' + error.message + '</p>';
+                });
+        }
+
+        // Auto-test on page load
+        window.onload = function() {
+            console.log('ARVIMEDIA Test Page Loaded');
+            console.log('Testing routes...');
+        };
+    </script>
+</body>
+</html>

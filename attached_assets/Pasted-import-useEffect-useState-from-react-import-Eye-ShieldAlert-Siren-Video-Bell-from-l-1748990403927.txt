@@ -1,0 +1,60 @@
+import { useEffect, useState } from 'react';
+import { Eye, ShieldAlert, Siren, Video, Bell } from 'lucide-react';
+
+export default function CCTVIntruderDashboard() {
+  const [status, setStatus] = useState({
+    motionDetected: false,
+    intruderDetected: false,
+    lastCapture: 'None',
+    alertSent: false
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const intruder = Math.random() > 0.9;
+      setStatus({
+        motionDetected: intruder,
+        intruderDetected: intruder,
+        lastCapture: intruder ? 'Intruder_01.png' : status.lastCapture,
+        alertSent: intruder || status.alertSent
+      });
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [status.alertSent, status.lastCapture]);
+
+  return (
+    <section className="min-h-screen bg-gray-950 text-white px-6 py-16">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
+        {/* Live Feed */}
+        <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
+          <h2 className="text-xl font-bold mb-4">Live CCTV Feed</h2>
+          <div className="bg-black h-64 rounded flex items-center justify-center">
+            <Video className="text-white w-16 h-16" />
+          </div>
+          <div className="mt-4 text-sm">
+            <Eye className="inline-block mr-2 text-yellow-400" /> Motion Detected: {status.motionDetected ? 'Yes' : 'No'}
+          </div>
+        </div>
+
+        {/* Intruder Panel */}
+        <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
+          <h2 className="text-xl font-bold mb-4">Intruder Response Panel</h2>
+          <div className="space-y-4 text-sm">
+            <div>
+              <ShieldAlert className="inline-block mr-2 text-red-500" /> Intruder Detected: {status.intruderDetected ? '🚨 YES' : 'Clear'}
+            </div>
+            <div>
+              <Bell className="inline-block mr-2 text-green-400" /> Alert Sent to AIR Support: {status.alertSent ? '✅ Sent' : 'Not Yet'}
+            </div>
+            <div>
+              <Siren className="inline-block mr-2 text-orange-400" /> Last Captured Snapshot: {status.lastCapture}
+            </div>
+            <button className="mt-4 bg-red-600 text-white py-2 px-4 rounded">
+              Manual Alert to AIR
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

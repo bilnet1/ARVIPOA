@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDEIST + EFUFA | ARVIPOA Energy Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0b0c;
+      color: #f1f1f1;
+    }
+    header {
+      background: #101010;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #0ff;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffe0;
+      margin-bottom: 0.5rem;
+    }
+    .section {
+      padding: 2rem;
+      border-bottom: 1px solid #222;
+    }
+    .section h2 {
+      color: #00ffcc;
+      margin-bottom: 1rem;
+    }
+    .feature {
+      background: #1a1a1d;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid #0ff;
+      border-radius: 8px;
+    }
+    .holographic-border {
+      border: 1px solid #00ffe0;
+      box-shadow: 0 0 10px #00ffe0aa;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IDEIST + EFUFA</h1>
+    <p>Intelligent Digital Electricity & Internet Supply Transponder</p>
+  </header>
+
+  <div class="section">
+    <h2>🔌 The Power Theft Crisis</h2>
+    <div class="feature">
+      Ghana and many West African nations suffer from rampant electricity theft. Illegal rerouting, bypassing meters, and inside-job collaborations result in massive losses for utility companies and the economy.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>⚡ IDEIST: Energy Reinvented</h2>
+    <div class="holographic-border">
+      <ul>
+        <li>Installed on power poles above reach</li>
+        <li>Detects human motion near restricted areas</li>
+        <li>Logs consumption before power reaches the household</li>
+        <li>Automatically syncs with drones for surveillance</li>
+        <li>Supplies both electricity and internet via Ethernet & WiFi</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📡 EFUFA: Smart Socket, Smarter Security</h2>
+    <div class="holographic-border">
+      <ul>
+        <li>Voice and face verification before power access</li>
+        <li>Detects and blocks unauthorized tampering</li>
+        <li>Tracks energy usage per individual user</li>
+        <li>Switches voltage as needed (220V ↔ 110V)</li>
+        <li>Mobile or SMS command-based access</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🌐 Internet + Energy Distribution</h2>
+    <div class="feature">
+      SIDEIST units at transformers transmit secure digital energy and internet bundles through RJ45 to chained IDEIST units. Passers-by and registered users benefit from smart roaming WiFi coverage.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔐 Benefits to Government & Utilities</h2>
+    <div class="feature">
+      <ul>
+        <li>Live monitoring of illegal tapping attempts</li>
+        <li>Higher revenue collection with per-user tracking</li>
+        <li>Faster response via AI drone dispatch</li>
+        <li>Secure digital conversion prevents tampering</li>
+        <li>Transparent billing linked to verified usage</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 ARVIPOA Energy Systems. Powered by IDEIST & EFUFA
+  </footer>
+</body>
+</html>

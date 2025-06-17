@@ -1,0 +1,89 @@
+What to Tell AI (for Runway, Replit, or any dev AI):
+“Use this hyper-realistic UI design to create the interactive ARVIPOA Building Registration form. It should integrate with the land already registered and allow the following features, interactions, and sections:
+
+📋 Sections and Features:
+Property Selection: Fetch all lands already registered under the account, and allow the user to select one as the base.
+
+Building Details:
+
+Building Name / Tag
+
+Building Type: Residential, Commercial, Mixed
+
+No. of Floors, Rooms, Color, Building Materials
+
+Upload Building Plan (optional)
+
+Rooms & Sub-Digital Address Generator (SDA):
+
+Add room/floor/space
+
+Auto-generate SDA using GPS & space dimensions
+
+Enable assigning people/devices to each room
+
+Room Purpose & Facilities Section:
+
+Purpose Button: When clicked, shows purpose options (e.g. Bedroom, Kitchen, Office, Rental, Worship Room)
+
+Facilities Button: Triggers modal for selecting facilities:
+
+Electricity meter type (Smart, Prepaid)
+
+Water supply type
+
+Internet Type (IDEIST/Wi-Fi)
+
+CCTV / Smart Devices
+
+Fire sprinkler / Hydrant
+
+Gas line or cylinder
+
+EFA Socket Integration
+
+Security Section:
+
+“Add Smart Pillar to Building” (optional if land already has one)
+
+Toggle for surveillance camera, smoke sensor, intrusion alert
+
+Usage Purpose + Rules:
+
+Domestic, Commercial, Mixed Use (buttons)
+
+Attach Room Rules (No Smoking, No Pets, For Couples Only, etc.)
+
+Enable profile-based restriction (validate against user profile)
+
+Inhabitants & Tenants:
+
+Add Inhabitants Button (with modal for name, profile, duration, role)
+
+Add Tenant Button with tenancy rules and Google Calendar scheduling
+
+Visual Preview:
+
+Show all rooms added
+
+Show facility icons
+
+Add option to preview as Smart Card
+
+🧠 Integrations:
+Firebase / Firestore
+
+Google Calendar for tenancy duration tracking
+
+GhanaPostGPS API for address validation
+
+OCR for building plan reading (optional)
+
+🎨 UI Styling:
+Use the design mockup provided
+
+Responsive layout (mobile & desktop)
+
+Dark UI with ARVIPOA green and gold accents
+
+Implement this building registration system as a module linked to land registration. Each building belongs to a registered land account and contains multiple addressable rooms/spaces with Smart facilities and user assignments.”

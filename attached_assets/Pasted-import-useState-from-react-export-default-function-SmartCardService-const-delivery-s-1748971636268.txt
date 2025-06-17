@@ -1,0 +1,43 @@
+import { useState } from 'react';
+
+export default function SmartCardService() {
+  const [delivery, setDelivery] = useState("home");
+
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-green-900 to-yellow-800 text-white px-6 py-16">
+      <div className="max-w-5xl mx-auto text-center">
+        <h1 className="text-4xl font-bold mb-4">ARVIPOA Smart Card</h1>
+        <p className="text-lg mb-6">A secure digital card that stores all your registered properties in one place – land, buildings, vehicles, domains, pets, intellectual property, and more.</p>
+
+        <div className="grid md:grid-cols-2 gap-8 text-left mt-12">
+          <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">Card Features</h3>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Stores multiple property types</li>
+              <li>QR code verification</li>
+              <li>Physical & digital copy option</li>
+              <li>Biometric & OTP access support</li>
+              <li>Tamper-proof identity binding</li>
+            </ul>
+          </div>
+
+          <div className="bg-black bg-opacity-30 p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">Preview & Apply</h3>
+            <div className="bg-white text-black rounded p-4 text-sm mb-4">
+              <p><strong>Name:</strong> John Doe</p>
+              <p><strong>ID:</strong> ARVP-2024-00984</p>
+              <p><strong>Properties:</strong> Land (Kasoa), Vehicle (Toyota), NFT (CryptoArt)</p>
+              <p><strong>Issued:</strong> 12 June 2025</p>
+            </div>
+            <label className="block text-white mb-2">Delivery Method:</label>
+            <select value={delivery} onChange={e => setDelivery(e.target.value)} className="w-full p-2 rounded text-black">
+              <option value="home">Home Delivery</option>
+              <option value="pickup">Pickup at Office</option>
+            </select>
+            <button className="mt-4 w-full bg-yellow-500 text-black font-bold py-2 px-4 rounded">Submit Application</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

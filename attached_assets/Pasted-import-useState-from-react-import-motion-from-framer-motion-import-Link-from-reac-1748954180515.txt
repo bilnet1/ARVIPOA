@@ -1,0 +1,111 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
+export default function Home() {
+  const [tourModal, setTourModal] = useState(false);
+
+  return (
+    <div className="bg-gradient-to-br from-green-900 via-black to-yellow-700 text-white min-h-screen">
+      {/* Hero Section */}
+      <section className="text-center py-20 px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-pulse">Welcome to ARVIPOA Smart Hub</h1>
+        <p className="text-xl max-w-2xl mx-auto">Secure your assets, monitor land, and access smart civic tools in one platform.</p>
+        <div className="mt-6 space-x-4">
+          <Link to="/register" className="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">Register Property</Link>
+          <Link to="/login" className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Sign In</Link>
+        </div>
+      </section>
+
+      {/* Search Bar with Smart Buttons */}
+      <div className="max-w-4xl mx-auto flex items-center gap-2 bg-white rounded shadow px-4 py-2 text-black">
+        <input type="text" className="flex-1 p-2 outline-none" placeholder="Search property, people, services..." />
+        <button className="bg-gray-200 p-2 rounded">QR</button>
+        <button className="bg-gray-200 p-2 rounded">Obj</button>
+        <button className="bg-yellow-500 text-black p-2 rounded">AI</button>
+      </div>
+
+      {/* Cleverjot Floating Icon */}
+      <div className="fixed bottom-6 right-6 animate-bounce z-50">
+        <button className="bg-yellow-600 p-4 rounded-full shadow-lg">🖊️</button>
+      </div>
+
+      {/* Scrollable Sections */}
+      <section className="py-16 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="bg-black bg-opacity-20 p-4 rounded shadow">
+          <h3 className="text-xl font-semibold mb-2">Marketplace</h3>
+          <p>Buy, sell, or discover smart items from verified vendors.</p>
+        </div>
+        <div className="bg-black bg-opacity-20 p-4 rounded shadow">
+          <h3 className="text-xl font-semibold mb-2">People You May Know</h3>
+          <p>Connect with verified property owners and businesses nearby.</p>
+        </div>
+        <div className="bg-black bg-opacity-20 p-4 rounded shadow">
+          <h3 className="text-xl font-semibold mb-2">Media Hub</h3>
+          <p>Access news, media content, and streaming services in one place.</p>
+        </div>
+        <div className="bg-black bg-opacity-20 p-4 rounded shadow">
+          <h3 className="text-xl font-semibold mb-2">Community Info</h3>
+          <p>Find groups, RBFS centers, hospitals, auto shops, and legal services.</p>
+        </div>
+      </section>
+
+      {/* Book Virtual Tour Button */}
+      <div className="text-center mt-10">
+        <button
+          className="bg-yellow-500 text-black px-6 py-3 rounded-full font-bold shadow hover:bg-yellow-400"
+          onClick={() => setTourModal(true)}
+        >
+          📍 Book a Property Virtual Tour
+        </button>
+      </div>
+
+      {tourModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="bg-white text-black p-8 rounded-lg max-w-md">
+            <h3 className="text-2xl font-bold mb-4">Schedule a Virtual Tour</h3>
+            <p>Choose property, preferred time, and delivery method.</p>
+            <div className="mt-4 space-y-3">
+              <select className="w-full p-2 border rounded">
+                <option>Land</option>
+                <option>House</option>
+                <option>Auto</option>
+              </select>
+              <input type="datetime-local" className="w-full p-2 border rounded" />
+              <select className="w-full p-2 border rounded">
+                <option>Home Delivery</option>
+                <option>Pickup</option>
+              </select>
+              <button className="mt-4 w-full bg-green-700 text-white p-2 rounded" onClick={() => setTourModal(false)}>Submit</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
+      <footer className="mt-20 bg-black bg-opacity-80 text-white py-8 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h4 className="font-bold text-yellow-500 mb-2">About ARVIPOA</h4>
+            <p>Smart Property Protection & Infrastructure Platform.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-yellow-500 mb-2">Services & Initiatives</h4>
+            <ul className="space-y-1">
+              <li><Link to="/services">Smart Card</Link></li>
+              <li><Link to="/services">Pillar Monitoring</Link></li>
+              <li><Link to="/services">River Barricade</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-yellow-500 mb-2">Contact</h4>
+            <p>Beside GES Madina Office, Presec Accra central<br/>GPS: GM0060328</p>
+            <p>📞 +233303981600</p>
+            <p>🌐 www.arvipoa.org</p>
+            <p>✉️ support@arvipoa.org</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

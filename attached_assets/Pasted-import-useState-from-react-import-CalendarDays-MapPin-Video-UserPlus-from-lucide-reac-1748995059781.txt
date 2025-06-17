@@ -1,0 +1,67 @@
+import { useState } from 'react';
+import { CalendarDays, MapPin, Video, UserPlus } from 'lucide-react';
+
+export default function VirtualTourScheduler() {
+  const [form, setForm] = useState({
+    property: '',
+    date: '',
+    time: '',
+    delivery: 'virtual',
+    confirmed: false
+  });
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setForm({ ...form, confirmed: true });
+  };
+
+  return (
+    <section className="min-h-screen bg-gray-950 text-white px-6 py-16">
+      <div className="max-w-xl mx-auto bg-gray-800 p-6 rounded shadow-lg">
+        <h2 className="text-3xl font-bold mb-4 text-yellow-400">Book a Property Virtual Tour</h2>
+        <p className="mb-6 text-sm text-gray-300">Choose a property, date, and delivery type. You'll receive a confirmation and link to join.</p>
+
+        {!form.confirmed ? (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="text-sm">Select Property</label>
+              <select name="property" onChange={handleChange} className="w-full p-2 text-black rounded">
+                <option value="">-- Choose --</option>
+                <option value="Land, Kasoa">Land, Kasoa</option>
+                <option value="2BR Apartment, Accra">2BR Apartment, Accra</option>
+              </select>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm">Date</label>
+                <input name="date" type="date" onChange={handleChange} className="w-full p-2 text-black rounded" />
+              </div>
+              <div>
+                <label className="text-sm">Time</label>
+                <input name="time" type="time" onChange={handleChange} className="w-full p-2 text-black rounded" />
+              </div>
+            </div>
+            <div>
+              <label className="text-sm">Delivery Method</label>
+              <select name="delivery" onChange={handleChange} className="w-full p-2 text-black rounded">
+                <option value="virtual">Virtual</option>
+                <option value="inperson">In-Person</option>
+              </select>
+            </div>
+            <button className="w-full bg-yellow-500 text-black font-bold py-2 px-4 rounded">Confirm Booking</button>
+          </form>
+        ) : (
+          <div className="text-center mt-6">
+            <Video className="mx-auto mb-4 text-green-400" size={48} />
+            <h3 className="text-xl font-bold text-green-300">Tour Confirmed</h3>
+            <p className="text-sm">You will receive a reminder and joining link shortly.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

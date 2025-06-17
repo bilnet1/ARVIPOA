@@ -1,0 +1,36 @@
+TRANSACTION TYPE: 
+DONATION & SAFETY
+NORMAL TRANSACTION
+GOVERNMENT SERVICES
+GOODS & SERVICES
+FOREX & EXCHANGE
+INVESTMENT & LOAN
+FAMILY VALUES & RBF 
+So if any of them is selected form this section, it will display it in th
+
+TRANSACTION REFERENCES
+DONATION, SAFETY & GIFT
+Save the water bodies, Offering, Tithe, First Fruit, Schorlaship, Prisons, Aged donation, Orphanage, Surgery, Partnership due, Zongo Empowerment, Youth Empowerment, Climate Concern, School Feeding, Confidential Drugs Purchase, Wishdorm, Mifection, Building Project, Departmental Dues, 
+
+GIFT
+Wedding Gift, Birthday Gift, Naming Gift, Valentine Gift, Marriage Anniversary, Sorry Gift, Love Gift, New Year Gift, Funeral Gift, Contribution, Support, Appreciation Gift, Airtime & Data Gift,
+
+DUES & CONTRIBUTION
+Membership Dues, Funeral dues, Old School Dues, Departmental Dues, Gym Membership, Classroom, Dues, Farewell Dues, Cultural Group Dues, Family contribution, Investment Contribution
+
+GOVERNMENT SERVICES
+License Application, License renewal, Driver’s License, Weapon License, Customs Duty, Police Report, Assembly payment, Birth Certificate, Marriage Certificate, Death Certificate, Passport Payment, Immigration Service fee, TV license, Driving License, Vehicle Registration, Road Worthy, Insurance, Government Bond, Social Security, NHIS Levy, COVID Levy, E-Services Levy, Copyright, Patent, Trademark, RGD Services, Penalty, Vehicle Toll, auction payment, Surety/Bail, Fine, parking Fee, Visa Fee, Property rate, Income Tax, Annual Returns, Government Bond, Building Permit, Windshield Sticker Permit, Forestry License, Fire License, FDA Permit/License, GSA Permit/License, Yellow Card, Tourism License, Land Title, Planning Comment, Certificate of Purchase, Health Insurance, Declaration Certificate, Recruitment, T-Bills
+
+GOODS & SERVICES & BILLS
+Electricity Bill, Water Bill, Gas Bill, Medical Bill, Rent, Hiring, Airtime, Data, Diesel, Petrol, Car Repair, Mortgage, Lease, Loan Disbursement, Loan Repayment, Contribution, investment, apps purchase, Dues, Security fee, Hotel Bill, Ticket, Legal Fee, Electronic Product, Sanitation, Oil & Gas, Filling Fee, Consultancy Fee, shipping Fee, air ticket, food & drink, Tobacco, Clothes and shoes, computers & gadgets, Debt part Payment, Debt full payment, Building materials, Auto Services, Pet services, Printing Services, T.Fare, Software development, Game development, AI Services, Photography, Toilet&bath, beauty & cosmetics,  Product development, Goods supply, Bonded warehouse, TV subscription, Salary, Overtime, Pension, Retirement benefits
+
+MEDICAL BILL
+Surgery, Medicine, Child Labour, Laboratory, Consultation, Dental, Eye, Gynecology, Psychiatry, Yellow Fever, Oxygen, Medicine
+
+LEGAL & JUDICIAL
+Lawyer Fee, Affidavit, Notary, Consultation, 
+
+PERSONAL AND NORMAL
+Family Upkeep, hospital bill, surgery, Market Money, Christmas Money, Snacks & Drinks, Easter Money, Sallah Money, Pocket Money, School Fees, Grocery and provisions, Feeding, Medicine, Kwasiabuo, Car purchase, Akwasidan, Marriage Fee, knocking fee, 
+
+TRANSACTION REFERENCE ID: Transaction ID can be entered here for instance if auto services are being paid for, the vehicle details will be entered in here.

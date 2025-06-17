@@ -1,0 +1,90 @@
+import { useEffect, useState } from 'react';
+import { Flame, Droplet, Wifi, MapPin, AlertTriangle, Eye, Waves } from 'lucide-react';
+
+export default function SmartPillarAdminDashboard() {
+  const [status, setStatus] = useState({
+    sprinklerActive: false,
+    fireDetected: false,
+    intrusion: false,
+    connection: true,
+    location: "06 Lakeside St",
+    waterPressure: 78,
+    riverLevel: 5.4,
+    alerts: [
+      { type: 'Distress Call', time: '10:34 AM', location: '06 Lakeside St' },
+      { type: 'Mobile Phone', time: '10:28 AM', location: '123 Main Rd' },
+      { type: 'Loud Music', time: '10:22 AM', location: '456 Ridge Way' },
+      { type: 'Fire Detected', time: '10:10 AM', location: '456 Ridge Way' }
+    ],
+    utilities: {
+      network: 'Normal',
+      sensor: 'Normal',
+      water: 'Leakage',
+      fire: 'Error',
+      rfid: 'RFID'
+    }
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus(prev => ({
+        ...prev,
+        sprinklerActive: Math.random() > 0.85,
+        fireDetected: Math.random() > 0.9,
+        intrusion: Math.random() > 0.92,
+        waterPressure: Math.max(40, Math.min(100, Math.random() * 100)),
+        riverLevel: +(Math.random() * 8).toFixed(1)
+      }));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="min-h-screen bg-gray-950 text-white px-6 py-12">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6">
+        {/* Pillar Status */}
+        <div className="bg-gray-800 rounded-lg p-4 shadow-lg col-span-1">
+          <h2 className="text-xl font-bold mb-2">PILLAR STATUS</h2>
+          <img src="/pillar-status.jpg" alt="Smart Boundary Pillar" className="rounded mb-4" />
+          <ul className="space-y-2 text-sm">
+            <li><Flame className="inline-block mr-2 text-red-500" /> Fire: {status.fireDetected ? '🔥 Detected' : 'Clear'}</li>
+            <li><Droplet className="inline-block mr-2 text-blue-400" /> Sprinkler: {status.sprinklerActive ? '💧 Active' : 'Off'}</li>
+            <li><Wifi className="inline-block mr-2 text-green-400" /> Network: {status.connection ? 'Online' : 'Offline'}</li>
+          </ul>
+        </div>
+
+        {/* Live Map */}
+        <div className="bg-gray-800 rounded-lg p-4 shadow-lg col-span-2">
+          <h2 className="text-xl font-bold mb-2">LIVE MAP</h2>
+          <img src="/livemap.jpg" alt="Map View" className="rounded w-full mb-4" />
+          <div className="text-sm">
+            <MapPin className="inline-block mr-2 text-lime-400" /> {status.location} — River Level: {status.riverLevel}m
+          </div>
+        </div>
+
+        {/* Alerts */}
+        <div className="col-span-1 bg-gray-800 rounded-lg p-4 shadow-lg">
+          <h2 className="text-xl font-bold mb-2">ALERTS</h2>
+          {status.alerts.map((a, i) => (
+            <div key={i} className="bg-gray-900 p-2 mb-2 rounded text-sm">
+              <AlertTriangle className="inline-block text-red-500 mr-2" /> {a.type} <span className="block text-xs text-gray-400">{a.location} — {a.time}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Utilities */}
+        <div className="col-span-2 bg-gray-800 rounded-lg p-4 shadow-lg">
+          <h2 className="text-xl font-bold mb-2">UTILITIES SYSTEM</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            {Object.entries(status.utilities).map(([label, value], i) => (
+              <div key={i} className="bg-gray-900 rounded p-3 flex justify-between">
+                <span className="capitalize">{label}</span>
+                <span className={`font-bold ${value === 'Normal' ? 'text-green-400' : value === 'Leakage' ? 'text-yellow-400' : 'text-red-500'}`}>{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
